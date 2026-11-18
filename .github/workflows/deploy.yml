@@ -1,13 +1,14 @@
 name: Deploy to Coolify
 
 on:
-    push:
-        branches:
+  push:
+    branches:
+      - main
 
 jobs:
-    deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Trigger Coolify Webhook
-              run: |
-                  curl -X GET "${{ secrets.COOLIFY_WEBHOOK }}"
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify Webhook
+        run: |
+          curl -X GET "${{ secrets.COOLIFY_WEBHOOK }}"
